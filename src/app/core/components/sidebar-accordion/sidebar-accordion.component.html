@@ -3,7 +3,7 @@
 
     <!-- ACCORDION TOP LEVEL -->
     <div class="menu" (click)="manageAction(menu, i, false)">
-      <span *ngIf="menu?.title" class="menu-name">{{ menu?.title | translate }}</span>
+      <span *ngIf="menu?.title" class="menu-name" [innerHtml]="menu?.title | translate"></span>
       <img *ngIf="!menu?.title" class="flag-img" [src]="currentLangFlag">
       <mat-icon [@rotateIcon]="menu.active" *ngIf="menu.children">keyboard_arrow_right</mat-icon>
     </div>
