@@ -79,7 +79,6 @@
         min-width: 170px;
         max-width: 250px;
         max-height: 0vh;
-        // padding-top: 13px;
         white-space: nowrap;
         text-overflow: ellipsis;        
         overflow: hidden;
@@ -93,6 +92,7 @@
         }
 
         &.top {
+          @include transition(all, ease, .3s);
           top: 85px;
         }
 
