@@ -24,7 +24,7 @@
           <img class="flag-img" *ngIf="!menuItem?.title" [src]="currentLangFlag">
         </button>
 
-        <div class="children" [ngClass]="isLastItem(i) ? 'children-right' : 'children-left'">
+        <div class="children" [ngClass]="isLastItem(i) ? 'right' : 'left'">
           <button mat-button class="children-btn" *ngFor="let child of menuItem?.children">
             <div *ngIf="!child?.flag" class="menu-button"  [routerLink]="child?.route">{{ child?.title | translate }}</div>
             <div class="menu-button flag-btn" *ngIf="child?.flag" (click)="changeLanguage(child?.language)">
