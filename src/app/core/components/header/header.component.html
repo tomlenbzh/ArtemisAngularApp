@@ -19,12 +19,14 @@
       <!-- HEADER ITEM CHILDREN -->
       <div class="header-item-children" *ngIf="menuItem?.children">
 
-        <button mat-button class="header-button">
-          <span class="child-title" *ngIf="menuItem?.title" [textContent]="menuItem?.title | translate"></span>
-          <img class="flag-img" *ngIf="!menuItem?.title" [src]="currentLangFlag">
-        </button>
+        <div class="button-container">
+          <button mat-button class="header-button">
+            <span class="child-title" *ngIf="menuItem?.title" [innerHtml]="menuItem?.title | translate"></span>
+            <img class="flag-img" *ngIf="!menuItem?.title" [src]="currentLangFlag">
+          </button>
+        </div>
 
-        <div class="children" [ngClass]="isLastItem(i) ? 'right' : 'left'">
+        <div class="children" [ngClass]="{ 'top': isOnTop, 'right': isLastItem(i), 'left': !isLastItem(i) }">
           <button mat-button class="children-btn" *ngFor="let child of menuItem?.children">
             <div *ngIf="!child?.flag" class="menu-button"  [routerLink]="child?.route">{{ child?.title | translate }}</div>
             <div class="menu-button flag-btn" *ngIf="child?.flag" (click)="changeLanguage(child?.language)">

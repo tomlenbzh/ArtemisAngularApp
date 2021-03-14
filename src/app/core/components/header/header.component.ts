@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { LANGUAGES } from '@app/core/utils/constants/languages';
 import { MenuLogo } from '@app/core/utils/constants/menu';
 import { MenuItem } from '@app/core/utils/interfaces/menu';
@@ -9,7 +9,7 @@ import { getLanguageFlag } from '@app/shared/functions/images/get-language-flag'
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnChanges {
 
   @Input() isOnTop: boolean;
   @Input() menuItems: MenuItem[] = [];
@@ -29,7 +29,7 @@ export class HeaderComponent {
 
   /**
    * Emits the new language in which the app should be translated.
-   * 
+   *
    * @param lang            string        // The app's new language
    */
    changeLanguage(lang: LANGUAGES): void {
@@ -38,7 +38,7 @@ export class HeaderComponent {
 
   /**
    * Returns true if the current menu item is the last in the list.
-   * 
+   *
    * @param index           number        // The index of the current menu item
    */
   isLastItem(index: number): boolean {

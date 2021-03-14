@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SidebarAccordionComponent } from './sidebar-accordion.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { SidebarAccordionComponent } from '@app/core/components/sidebar-accordion/sidebar-accordion.component';
+import { MaterialModule } from '@app/material.module';
+import { SharedModule } from '@app/shared/shared.module';
 
 describe('SidebarAccordionComponent', () => {
   let component: SidebarAccordionComponent;
@@ -8,7 +11,13 @@ describe('SidebarAccordionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SidebarAccordionComponent ]
+      declarations: [ SidebarAccordionComponent ],
+      imports: [
+        TranslateModule,
+        RouterTestingModule,
+        MaterialModule,
+        SharedModule
+      ]
     })
     .compileComponents();
   });

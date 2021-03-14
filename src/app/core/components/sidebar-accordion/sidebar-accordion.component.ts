@@ -22,7 +22,7 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
   @Input() options: MenuConfig;
   @Input() currentLang: string;
 
-  @Output() close: EventEmitter<boolean> = new EventEmitter();
+  @Output() closeSide: EventEmitter<boolean> = new EventEmitter();
   @Output() changeLang: EventEmitter<LANGUAGES> = new EventEmitter();
 
   currentLangFlag = null;
@@ -42,7 +42,7 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
 
   /**
    * Emits the new language in which the app should be translated.
-   * 
+   *
    * @param lang            string        // The app's new language
    */
   changeLanguage(lang: LANGUAGES): void {
@@ -51,7 +51,7 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
 
   /**
    * Determines what action trigger when clicking a menu item.
-   * 
+   *
    * @param item            MenuItem      // The current menu item
    * @param index           number        // The current menu item's index
    * @param isSubMenuItem   boolean       // Is the current menu item a child item?
@@ -78,7 +78,7 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
 
   /**
    * Edits the accordion's configuration according to new options.
-   * 
+   *
    * @param options         MenuConfig    // The menu configuration options
    */
   private mergeConfig(options: MenuConfig): MenuConfig {
@@ -87,16 +87,16 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
 
   /**
    * Emits to the parent component to close the sidebar component.
-   * 
+   *
    * @param status          boolean       // The new status of the sidebar component
    */
    private closeSidenav(status: boolean): void {
-    this.close.emit(status);
+    this.closeSide.emit(status);
   }
 
   /**
    * Toggles the status of an accordion item.
-   * 
+   *
    * @param index           number        // The index of the item that should be toggled.
    */
   private toggleAccordionItem(index: number): void {
@@ -105,7 +105,7 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
 
   /**
    * Navigates to the specified route.
-   * 
+   *
    * @param route           string        // The new route to navigate to.
    */
   private navigateTo(route: string): void {

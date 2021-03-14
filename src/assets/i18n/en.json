@@ -21,8 +21,18 @@
       "CHANGE_MANAGEMENT": "Change Management",
       "TEAM_BUILDING": "Team Building"
     },
-    "CONTACT": "Contact"
+    "REFERENCES": "References",
+    "CONTACT": "Contact",
+    "TALENTS": {
+      "TALENTS": "<span class=\"text-italic\">Talents</span>© TLP",
+      "IDENTIFY_ASSETS": "Identifier ses atouts",
+      "LEADERSHIP_CAPACITY": "Capacité leadership",
+      "TEAM_PERFORMANCE": "Performance de l’équipe",
+      "EX_INDIVIDUAL_PROFILE": "Exemple Profil Individuel",
+      "EX_TEAM_PROFILE": "Exemple Profil Équipe"
+    }
   },
+
   "LANGUAGES": {
     "FRENCH": "Français",
     "ENGLISH": "English"

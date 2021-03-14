@@ -26,8 +26,8 @@ export const MenuItems: MenuItem[] = [
     children: [
       { title: 'MENU.COACHING.INDIVIDUAL_COACHING', route: '' },
       { title: `MENU.COACHING.TEAM_COACHING`, route: '' },
-      { title: 'MENU.COACHING.TEAM_COACHING', route: '' },
-      { title: `MENU.COACHING.TEAM_COACHING`, route: '' }
+      { title: 'MENU.COACHING.CEO_COACHING', route: '' },
+      { title: `MENU.COACHING.ORGANISATION_COACHING`, route: '' }
     ]
   }, {
     title: 'MENU.CONSULTING.CONSULTING',
@@ -37,7 +37,22 @@ export const MenuItems: MenuItem[] = [
       { title: `MENU.CONSULTING.TEAM_BUILDING`, route: '' }
     ]
   }, {
+    title: 'MENU.REFERENCES',
+    active: false,
+    route: ''
+  }, {
+    title: `MENU.TALENTS.TALENTS`,
+    active: false,
+    children: [
+      { title: 'MENU.TALENTS.IDENTIFY_ASSETS', route: '' },
+      { title: `MENU.TALENTS.LEADERSHIP_CAPACITY`, route: '' },
+      { title: `MENU.TALENTS.TEAM_PERFORMANCE`, route: '' },
+      { title: `MENU.TALENTS.EX_INDIVIDUAL_PROFILE`, route: '' },
+      { title: `MENU.TALENTS.EX_TEAM_PROFILE`, route: '' },
+    ]
+  }, {
     title: `MENU.CONTACT`,
+    active: false,
     route: ''
   }, {
     active: false,
