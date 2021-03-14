@@ -6,6 +6,7 @@ import { MaterialModule } from '@app/material.module';
 import { LayoutContainerComponent } from '@app/core/containers/layout/layout.container.component';
 import { HeaderComponent } from '@app/core/components/header/header.component';
 import { SidebarComponent } from '@app/core/components/sidebar/sidebar.component';
+import { FooterComponent } from '@app/core/components/footer/footer.component';
 
 describe('LayoutContainerComponent', () => {
   let component: LayoutContainerComponent;
@@ -16,7 +17,8 @@ describe('LayoutContainerComponent', () => {
       declarations: [
         LayoutContainerComponent,
         SidebarComponent,
-        HeaderComponent
+        HeaderComponent,
+        FooterComponent
       ],
       imports: [
         TranslateModule.forRoot(),

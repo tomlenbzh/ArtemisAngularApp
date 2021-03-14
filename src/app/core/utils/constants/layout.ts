@@ -3,3 +3,5 @@ export enum DRAWER_MODE {
   OVER = 'over',
   PUSH = 'push'
 }
+
+export const AppLogo = 'assets/images/logos/artemis-white.png';
