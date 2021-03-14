@@ -1,0 +1,30 @@
+{
+  "MENU": {
+    "HOME": "Home",
+    "ARTEMIS": {
+      "ARTEMIS": "Artemis",
+      "ABOUT_US": "Who are we?",
+      "APPROACH": "Approach",
+      "PRINCIPLES": "Principles",
+      "VALUES": "Values",
+      "ETHICS": "Ethics"
+    },
+    "COACHING": {
+      "COACHING": "Coaching",
+      "INDIVIDUAL_COACHING": "Individual Coaching",
+      "TEAM_COACHING": "Team Coaching",
+      "CEO_COACHING": "COE Coaching",
+      "ORGANISATION_COACHING": "Organisation Coaching"
+    },
+    "CONSULTING": {
+      "CONSULTING": "Consulting",
+      "CHANGE_MANAGEMENT": "Change Management",
+      "TEAM_BUILDING": "Team Building"
+    },
+    "CONTACT": "Contact"
+  },
+  "LANGUAGES": {
+    "FRENCH": "Français",
+    "ENGLISH": "English"
+  }
+}

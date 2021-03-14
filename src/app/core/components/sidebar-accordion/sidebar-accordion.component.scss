@@ -1,0 +1,99 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins.scss';
+
+.accordion {
+  width: 100%;
+  margin: auto;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.accordion .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  height: 50px;
+  font-size: small;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #d1d1d1;
+  cursor: pointer;
+  @include transition(all, ease, .2s);
+
+  .menu-name {
+    padding-left: 0;
+    @include transition(all, ease, .2s);
+  }
+}
+
+.accordion .menu:hover {
+  background: #1f242a;
+
+  .menu-name {
+    padding-left: 10px;
+  }
+}
+
+.accordion li:last-child .menu {
+  border-bottom: 0;
+}
+
+.submenu {
+  height: 0;
+  overflow: hidden;
+  background: #0e1117;
+  font-size: 14px;
+  list-style-type: none;
+  padding-left: 0;
+  @include transition(all, ease, .4s);
+
+  .submenu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 15px 10px 25px;
+    height: 50px;
+    font-size: small;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: #d1d1d1;
+    cursor: pointer;
+    @include transition(all, ease, .2s);
+
+    .menu-name {
+      @include transition(all, ease, .2s);
+    }
+  }
+
+  .submenu-item:hover {
+    background: #1f242a;
+
+    .menu-name {
+      padding-left: 10px;
+    }
+  }
+
+  .menu-name {
+    text-transform: none;
+  }
+}
+
+.submenu li {
+  border-bottom: 1px solid #262c34;
+}
+
+.accordion li:last-child .submenu li:last-child {
+  border-bottom: 0;
+}
+
+.flag-img {
+  height: 15px;
+  width: 25px;
+}
+
+.flag-label {
+  margin-left: 20px;
+}

@@ -1,0 +1,30 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins.scss';
+
+.sidenav-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  overflow: hidden;
+  background-color: $sidenav-overlay-bg;
+  @include transition(all, ease, .3s);
+}
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 350px;
+  background-color: $sidenav-bg;
+  z-index: 9999;
+  @include transition(all, ease, .3s);
+
+  &.shadow {
+    box-shadow: $sidenav-shadow !important;
+  }
+}

@@ -1,0 +1,21 @@
+<ul id="accordion" class="accordion">
+  <li *ngFor="let menu of menuItems; let i = index" [class.active]="menu.active">
+
+    <!-- ACCORDION TOP LEVEL -->
+    <div class="menu" (click)="manageAction(menu, i, false)">
+      <span *ngIf="menu?.title" class="menu-name">{{ menu?.title | translate }}</span>
+      <img *ngIf="!menu?.title" class="flag-img" [src]="currentLangFlag">
+      <mat-icon [@rotateIcon]="menu.active" *ngIf="menu.children">keyboard_arrow_right</mat-icon>
+    </div>
+
+    <!-- ACCORDION SUBMENU -->
+    <ul class="submenu" #submenu [style.height.px]="menu.active ? submenu.scrollHeight : 0">
+      <li *ngFor="let child of menu.children" class="submenu-item" (click)="manageAction(child, i, true)">
+        <span class="menu-name">{{ child.title | translate }}</span>
+        <img *ngIf="child?.flag" [src]="child?.flag" class="flag-img">
+        <span *ngIf="child?.flag" class="flag-label">{{ child?.languageLabel | translate }}</span>
+      </li>
+    </ul>
+
+  </li>
+</ul>

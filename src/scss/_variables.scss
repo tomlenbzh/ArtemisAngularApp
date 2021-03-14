@@ -1,0 +1,23 @@
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+
+$border-radius-base: 4px;
+$padding-base: 20px;
+
+// MAIN COLOURS
+$black: #000;
+$white: #fff;
+$dark-bg: #17202A;
+$shadow-bg: #000000a3;
+
+// HEADER
+$header-bg: $dark-bg;
+$header-min-height: 64px;
+$header-max-height: 100px;
+$header-shadow: 0 2px 10px 9px $shadow-bg;
+
+// SIDENAV
+$sidenav-bg: $dark-bg;
+$sidenav-overlay-bg: #000000a8;
+$sidenav-shadow: 10px 0 5px -2px$shadow-bg;
+

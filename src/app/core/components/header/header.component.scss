@@ -1,0 +1,140 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background-color: transparent;
+  color: $white;
+  height: 100px;
+  padding: 0px 20px;
+  @include transition(all, ease, .3s);
+
+  &.transparent {
+    height: $header-max-height;
+  }
+
+  &.coloured {
+    background: $header-bg;
+    color: $white;
+    height: $header-min-height;
+    box-shadow: $header-shadow;
+  }
+
+  .header-logo {
+    height: 25px;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+}
+
+.header-button {
+  letter-spacing: 1px;
+  margin-left: 20px;
+  color: #d1d1d1;
+  font-weight: 200;
+  text-transform: uppercase;
+  @include transition(all, ease, .3s);
+}
+
+.header-button:hover {
+  color: $white;
+}
+
+.children-btn {
+  color: #d1d1d1;
+  background: rgba(14, 17, 23, 0.98);
+  font-weight: 200;
+  font-size: small;
+  border: none;
+  letter-spacing: 1px;
+  border-radius: 0px;
+  padding: 5px 15px;
+  text-align: left;
+  @include transition(all, ease, .3s);
+}
+
+.children-btn:hover {
+  color: $white;
+  background: #1f242a;
+}
+
+.children {
+  position: absolute;
+  padding-top: 13px;
+  min-width: 170px;
+  max-width: 250px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 0vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.children-left {
+  left: 0;
+}
+
+.children-right {
+  right: 0;
+}
+
+.header-item-children {
+  position: relative;
+}
+
+.header-item-children:hover {
+  .children {
+    max-height: 100vh;
+    @include transition(all, ease, .3s);
+  }
+}
+
+.menu-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  outline: none;
+}
+
+.menu-button-label {
+  display: flex;
+}
+
+.flag-img {
+  height: 15px;
+  width: 25px;
+}
+
+.flag-label {
+  margin-left: 20px;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+@media (min-width: 950px) {
+  .header-content-full {
+    display: block;
+  }
+
+  .header-content-small {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  .header-content-full {
+    display: none;
+  }
+
+  .header-content-small {
+    display: block;
+    margin-right: 20px;
+  }
+}
