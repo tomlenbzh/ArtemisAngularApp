@@ -39,7 +39,7 @@ export const MenuItems: MenuItem[] = [
   }, {
     title: 'MENU.REFERENCES',
     active: false,
-    route: ''
+    route: 'references'
   }, {
     title: `MENU.TALENTS.TALENTS`,
     active: false,
@@ -53,7 +53,7 @@ export const MenuItems: MenuItem[] = [
   }, {
     title: `MENU.CONTACT`,
     active: false,
-    route: ''
+    route: 'contact'
   }, {
     active: false,
     children: [

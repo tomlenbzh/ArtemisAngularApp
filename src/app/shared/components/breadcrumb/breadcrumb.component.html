@@ -1,0 +1,9 @@
+<ng-container *ngIf="breadcrumb">
+  <div class="breadcrumb-container">
+    {{ 'MENU.HOME' | translate }}
+    <ng-container *ngFor="let item of breadcrumb">
+      <span class="ml5 mr5">/</span>
+      {{ item | translate }}
+    </ng-container>
+  </div>
+</ng-container>

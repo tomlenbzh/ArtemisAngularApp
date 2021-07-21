@@ -1,0 +1,58 @@
+@import '../../../../../../scss/mixins.scss';
+
+.wallpaper-container {
+
+  .wallpaper-img {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../../../../assets/images/wallapapers/home-wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    @include object-fit(cover);
+    @include brightness(0.2);
+  }
+
+  .wallpaper-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    .img-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 75%;
+
+      .wallpaper-logo {
+        width: 450px;
+      }
+  
+      .wallpaper-title {
+        font-size: large;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: white;
+      }
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 25%;
+
+      .scroll-btn {
+        background: #070c10;
+        border: 1px solid white;
+        color: white;
+      }
+    }
+  }
+}

@@ -11,9 +11,9 @@
     <!-- ACCORDION SUBMENU -->
     <ul class="submenu" #submenu [style.height.px]="menu.active ? submenu.scrollHeight : 0">
       <li *ngFor="let child of menu.children" class="submenu-item" (click)="manageAction(child, i, true)">
-        <span class="menu-name">{{ child.title | translate }}</span>
+        <span class="menu-name" [textContent]="child.title | translate"></span>
         <img *ngIf="child?.flag" [src]="child?.flag" class="flag-img">
-        <span *ngIf="child?.flag" class="flag-label">{{ child?.languageLabel | translate }}</span>
+        <span *ngIf="child?.flag" class="flag-label" [textContent]="child?.languageLabel | translate"></span>
       </li>
     </ul>
 

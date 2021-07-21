@@ -1,7 +1,15 @@
 <ng-container *ngIf="opened">
 
-  <div class="sidenav-overlay" *ngIf="showSidenav" (click)="closeSidenav()"></div>
-  <div class="sidenav" [@slideInOut]="showSidenav" (@slideInOut.done)="slideInOutEnd($event)" [ngClass]="{'shadow': showSidenav}"> 
+  <div
+    class="sidenav-overlay"
+    *ngIf="showSidenav"
+    (click)="closeSidenav()"></div>
+
+  <div
+    class="sidenav"
+    [ngClass]="{'shadow': showSidenav}"
+    [@slideInOut]="showSidenav"
+    (@slideInOut.done)="slideInOutEnd($event)" > 
 
     <!-- ACCORDION MENU -->
     <artemis-sidebar-accordion
@@ -9,8 +17,7 @@
       [menuItems]="menuItems"
       [currentLang]="currentLang"
       (changeLang)="changeLanguage($event)"
-      (closeSide)="closeSidenav($event)">
-    </artemis-sidebar-accordion>
+      (closeSide)="closeSidenav($event)"></artemis-sidebar-accordion>
 
   </div>
 

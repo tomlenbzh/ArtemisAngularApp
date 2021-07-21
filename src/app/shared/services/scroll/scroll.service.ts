@@ -11,26 +11,22 @@ export class ScrollService {
   /**
    * Binds an event listener to a type and a function
    *
-   * @param type: string
-   * @param listener: any
-   * @param options: boolean
+   * @param   { string }    type        The type of event
+   * @param   { any }       listener    The listener object
+   * @param   { boolean }   options     Listener specific options
    */
   public setEventListener(type: string, listener: any, options: boolean): void {
-    if (this.platformService.isPlatformBrowser()) {
-      window.addEventListener(type, listener, options);
-    }
+    this.platformService.isPlatformBrowser() && (window.addEventListener(type, listener, options));
   }
 
   /**
    * Removes an existing event listener
    *
-   * @param type: string
-   * @param listener: any
-   * @param options: boolean
+   * @param   { string }    type        The type of event
+   * @param   { any }       listener    The listener object
+   * @param   { boolean }   options     Listener specific options
    */
   public removeEventListener(type: string, listener: any, options: boolean): void {
-    if (this.platformService.isPlatformBrowser()) {
-      window.removeEventListener(type, listener, options);
-    }
+    this.platformService.isPlatformBrowser() && window.removeEventListener(type, listener, options);
   }
 }

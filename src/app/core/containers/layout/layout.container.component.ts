@@ -36,7 +36,7 @@ export class LayoutContainerComponent implements AfterViewInit {
   /**
    * Sets the new language of the application.
    *
-   * @param lang            LANGUAGES     // The app's new language
+   * @param     { LANGUAGES }     lang      The app's new language
    */
   changeLanguage(lang: LANGUAGES): void {
     this.translateService.use(lang);

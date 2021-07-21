@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { HomeRoutingModule } from '@app/pages/home/home-routing.module';
-import { HomeContainerComponent } from '@app/pages/home/containers/home/home-container.component';
-import { HomeComponent } from './components/home/home.component';
+import { homeContainers } from './containers';
+import { homeComponents } from './components';
+import { MaterialModule } from '@app/material.module';
 
 @NgModule({
   declarations: [
-    HomeContainerComponent,
-    HomeComponent
+    ...homeContainers,
+    ...homeComponents
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    MaterialModule,
+    TranslateModule.forChild({})
   ]
 })
 export class HomeModule { }

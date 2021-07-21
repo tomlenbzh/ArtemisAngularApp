@@ -33,7 +33,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   exports: [
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     // MatCheckboxModule,
     // MatCheckboxModule,
     MatButtonModule,

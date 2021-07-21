@@ -11,3 +11,14 @@
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
+
+@mixin object-fit($scale) {
+  object-fit: $scale;
+  -o-object-fit: $scale;
+  -moz-object-fit: $scale;
+}
+
+@mixin brightness($brightness) {
+  -webkit-filter: brightness($brightness);
+  filter: brightness($brightness);
+}

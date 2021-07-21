@@ -30,7 +30,7 @@ export class HeaderComponent implements OnChanges {
   /**
    * Emits the new language in which the app should be translated.
    *
-   * @param lang            string        // The app's new language
+   * @param     { string }      lang      The app's new language
    */
    changeLanguage(lang: LANGUAGES): void {
     this.changeLang.emit(lang);
@@ -39,7 +39,7 @@ export class HeaderComponent implements OnChanges {
   /**
    * Returns true if the current menu item is the last in the list.
    *
-   * @param index           number        // The index of the current menu item
+   * @param     { number }      index     The index of the current menu item
    */
   isLastItem(index: number): boolean {
     return index === this.menuItems.length - 1;

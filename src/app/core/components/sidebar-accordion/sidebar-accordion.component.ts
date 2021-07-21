@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { Router } from '@angular/router';
 import { LANGUAGES } from '@app/core/utils/constants/languages';
 import { MenuConfig, MenuItem } from '@app/core/utils/interfaces/menu';
+import { getLanguageFlag } from '@app/shared/functions/images/get-language-flag';
 
 @Component({
   selector: 'artemis-sidebar-accordion',
@@ -36,14 +37,14 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.hasOwnProperty('currentLang')) {
-      this.currentLangFlag = `assets/images/flags/${this.currentLang}.png`;
+      this.currentLangFlag = getLanguageFlag(this.currentLang);
     }
   }
 
   /**
    * Emits the new language in which the app should be translated.
    *
-   * @param lang            string        // The app's new language
+   * @param     { string }      lang      The app's new language
    */
   changeLanguage(lang: LANGUAGES): void {
     this.changeLang.emit(lang);
@@ -52,15 +53,15 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
   /**
    * Determines what action trigger when clicking a menu item.
    *
-   * @param item            MenuItem      // The current menu item
-   * @param index           number        // The current menu item's index
-   * @param isSubMenuItem   boolean       // Is the current menu item a child item?
+   * @param     { MenuItem }      item              The current menu item
+   * @param     { number }        index             The current menu item's index
+   * @param     { boolean }       isSubMenuItem     Is the current menu item a child item?
    */
   manageAction(item: MenuItem, index: number, isSubMenuItem: boolean): void {
     if (item?.children) {
       if (!this.config.multi) {
         this.menuItems
-          .filter((menu: MenuItem, i: number) => i !== index && menu.active)
+          .filter((menu: MenuItem, index: number) => index !== index && menu.active)
           .map((menu: MenuItem) => menu.active = !menu.active);
       }
       this.toggleAccordionItem(index);
@@ -79,7 +80,7 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
   /**
    * Edits the accordion's configuration according to new options.
    *
-   * @param options         MenuConfig    // The menu configuration options
+   * @param     { MenuConfig }      options       The menu configuration options
    */
   private mergeConfig(options: MenuConfig): MenuConfig {
     return { multi: true, ...options };
@@ -88,7 +89,7 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
   /**
    * Emits to the parent component to close the sidebar component.
    *
-   * @param status          boolean       // The new status of the sidebar component
+   * @param     { boolean }     status      The new status of the sidebar component
    */
    private closeSidenav(status: boolean): void {
     this.closeSide.emit(status);
@@ -97,7 +98,7 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
   /**
    * Toggles the status of an accordion item.
    *
-   * @param index           number        // The index of the item that should be toggled.
+   * @param     { number }      index     The index of the item that should be toggled.
    */
   private toggleAccordionItem(index: number): void {
     this.menuItems[index].active = !this.menuItems[index].active;
@@ -106,7 +107,7 @@ export class SidebarAccordionComponent implements OnInit, OnChanges {
   /**
    * Navigates to the specified route.
    *
-   * @param route           string        // The new route to navigate to.
+   * @param     { string }      route     The new route to navigate to.
    */
   private navigateTo(route: string): void {
     this.router.navigateByUrl(route);

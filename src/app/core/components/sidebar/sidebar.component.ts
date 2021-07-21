@@ -33,7 +33,7 @@ export class SidebarComponent {
   /**
    * Closes the sidebar if resizing the window over 600px while the sidebar component is open.
    *
-   * @param event           any           // The triggered event when resizing the window
+   * @param     { any }     event     The triggered event when resizing the window
    */
   @HostListener('window:resize', ['$event'])
   onResize(event: any): void {
@@ -45,7 +45,7 @@ export class SidebarComponent {
   /**
    * Detects animation state and closes the sidebar component when the animation is finished.
    *
-   * @param event           any           // The current animation
+   * @param     { any }     event     The current animation
    */
   slideInOutEnd(event: any): void {
     if (event.fromState === true && event.toState === false) {
@@ -56,7 +56,7 @@ export class SidebarComponent {
   /**
    * Emits the new language in which the app should be translated.
    *
-   * @param lang            string        // The app's new language
+   * @param     { string }      lang      The app's new language
    */
   changeLanguage(lang: LANGUAGES): void {
     this.changeLang.emit(lang);
@@ -65,7 +65,7 @@ export class SidebarComponent {
   /**
    * Closes all the sidebar's items.
    *
-   * @param isSubItem       boolean       // Is the current menu item a child item?
+   * @param     { boolean }     isSubItem     Is the current menu item a child item?
    */
   closeSidenav(isSubItem: boolean): void {
     if (this.opened === true) {

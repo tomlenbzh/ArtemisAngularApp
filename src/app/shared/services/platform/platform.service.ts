@@ -8,9 +8,9 @@ export class PlatformService {
   constructor(@Inject(PLATFORM_ID) private platformId: any) { }
 
   /**
-   * Returns if app is running on the browser.
+   * Returns whether or not the app is running on the browser.
    *
-   * @returns: boolean
+   * @returns { boolean }
    */
   public isPlatformBrowser(): boolean {
     return isPlatformBrowser(this.platformId);

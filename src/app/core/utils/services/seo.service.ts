@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Meta, MetaDefinition, Title } from '@angular/platform-browser';
 import { PageMetadata } from '@app/core/utils/interfaces/metadata';
 import { DefaultMetadata } from '@app/core/utils/constants/metadata';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +14,14 @@ export class SeoService {
 
   constructor(
     private titleService: Title,
-    private metaTagService: Meta
+    private metaTagService: Meta,
+    private translate: TranslateService
   ) { }
 
   /**
    * Updates the current page's metadata for SEO puposes.
    *
-   * @param metadata        PageMetadata    // The current page's specific metadata
+   * @param     { PageMetadata }      metadata      The current page's specific metadata
    */
   updateMetaData(metadata: Partial<PageMetadata>): void {
 
@@ -33,14 +35,15 @@ export class SeoService {
       { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
     ]);
 
-    this.titleService.setTitle(metadata.title ? `${this.baseTitle} | ${metadata.title}` : `${this.baseTitle}`);
+    const title = metadata.title ? `${this.baseTitle} | ${this.translate.instant(metadata.title)}` : `${this.baseTitle}`;
+    this.titleService.setTitle(title);
   }
 
   /**
    * Returns the current page's metatags definition.
    *
-   * @param metadata        PageMetadata    // The current page's metadata, merged with the default ones
-   * @returns               MetaDefinition  // The new metatags definition
+   * @param     { PageMetadata }      metadata      The current page's metadata, merged with the default ones
+   * @returns   { MetaDefinition }                  The new metatags definition
    */
   private generateMetaDefinitions(metadata: PageMetadata): MetaDefinition[] {
     return [

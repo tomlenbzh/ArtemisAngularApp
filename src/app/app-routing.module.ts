@@ -7,7 +7,15 @@ const mainChildren = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
-    data: { title: 'ACCUEIL' }
+    data: { title: 'MENU.HOME' }
+  }, {
+    path: 'references',
+    loadChildren: () => import('./pages/references/references.module').then(m => m.ReferencesModule),
+    data: { title: 'MENU.REFERENCES', breadrumb: 'MENU.REFERENCES' }
+  }, {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule),
+    data: { title: 'MENU.CONTACT', breadrumb: 'MENU.CONTACT' }
   }, {
     path: '',
     redirectTo: 'home',
